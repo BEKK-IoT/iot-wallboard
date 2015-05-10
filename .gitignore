@@ -1,1 +1,11 @@
+# Project specific
 node_modules/
+dist/
+
+# IntelliJ
+.idea/
+*.iml
+/out/
+
+# osx
+.DS_Store
