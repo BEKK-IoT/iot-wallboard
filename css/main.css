@@ -1,3 +1,9 @@
+.large-icon {
+	font-size: 250px;
+}
+.light-on {
+	color: yellow;
+}
 .react-grid-layout {
 	position: relative;
 	transition: height 200ms ease;
