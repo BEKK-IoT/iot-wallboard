@@ -4,22 +4,25 @@ var webglWidget = function () {
 
 	var scene, camera, renderer;
 	var container;
-	var mesh;
+	var mesh, light;
+	var yellow = 0xEFFF45;
+	var grey = 0x949494;
+	var lightcolor =  0x404040;
 
 	var initGeometry = function(){
         var geometry = new THREE.SphereGeometry( 5, 32, 16 );
-		var material = new THREE.MeshLambertMaterial( { color: 0xEFFF45 } );
+		var material = new THREE.MeshLambertMaterial( { color: grey } );
 		mesh = new THREE.Mesh( geometry, material );
 		scene.add(mesh);
 	};
 
 	var initLight = function(){
-		var light = new THREE.PointLight(0xffffff);
+		light = new THREE.PointLight(0xffffff);
 		light.position.set(100,250,100);
 		scene.add(light);
-	    light = new THREE.PointLight(0xffffff);
-		light.position.set(100,-250,100);
-		scene.add(light);
+		light = new THREE.AmbientLight( lightcolor ); // soft white light
+	    scene.add( light );
+	
 	};
 
 	var onWindowResize  = function( event ) {
@@ -27,6 +30,24 @@ var webglWidget = function () {
 	    camera.updateProjectionMatrix();
 	    renderer.setSize( container.offsetWidth, container.offsetHeight );
   	};
+
+ 
+
+	var update = function()
+	{
+		
+	};
+
+	var render = function() 
+	{
+		renderer.render( scene, camera );
+	};
+
+	var animate = function(){
+		requestAnimationFrame( animate );
+		render();		
+		update();
+	};
 	
 	return {
 		init : function( DOMcontainer ){
@@ -49,9 +70,17 @@ var webglWidget = function () {
     		initGeometry();
     		renderer.render( scene, camera );
 		},
+		animate : function () {
+		    animate();
+		},
 		makeSphereGlow : function(){
-			var material = new THREE.MeshLambertMaterial( { color: 0xFFB300 } );
-			mesh.materials = material;
+			mesh.material.color.setHex( yellow );
+			light.color.setHex( yellow );
+			setTimeout(function(){ 
+				mesh.material.color.setHex(grey);
+				light.color.setHex( lightcolor );
+			}, 1000);
+			
 			// SUPER SIMPLE GLOW EFFECT
 			// use sprite because it appears the same from all angles
 
