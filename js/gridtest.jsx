@@ -90,9 +90,9 @@ var AddRemoveLayout = React.createClass({
   render() {
     return (
       <div>
-        <button onClick={this.onAddApp}>Add App Item</button>
-        <button onClick={this.onAddFirebase}>Add Firebase Item</button>
-        <button onClick={this.onAddWebGLApp}>Add WebGLApp Item</button>
+        <button className="btn" onClick={this.onAddApp}>Add App Item</button>
+        <button className="btn" onClick={this.onAddFirebase}>Add Firebase Item</button>
+        <button className="btn" onClick={this.onAddWebGLApp}>Add WebGLApp Item</button>
         <ResponsiveReactGridLayout onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange}
             {...this.props}>
           {_.map(this.state.items, this.createElement)}
