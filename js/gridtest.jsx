@@ -6,6 +6,7 @@ var ResponsiveReactGridLayout = require('react-grid-layout').Responsive;
 
 var App = require('./components/App.react');
 var WebGLApp = require('./components/WebGLApp.react');
+var Firebase = require('./components/FirebaseEvent.react');
 
 /**
  * This layout demonstrates how to use a grid with a dynamic number of elements.
@@ -56,6 +57,10 @@ var AddRemoveLayout = React.createClass({
     });
   },
 
+  onAddFirebase() {
+    this.onAddItem(Firebase, 3,3);
+  },
+
   onAddApp(){
   	this.onAddItem(App,2,2);
   },
@@ -86,6 +91,7 @@ var AddRemoveLayout = React.createClass({
     return (
       <div>
         <button onClick={this.onAddApp}>Add App Item</button>
+        <button onClick={this.onAddFirebase}>Add Firebase Item</button>
         <button onClick={this.onAddWebGLApp}>Add WebGLApp Item</button>
         <ResponsiveReactGridLayout onLayoutChange={this.onLayoutChange} onBreakpointChange={this.onBreakpointChange}
             {...this.props}>
