@@ -14,6 +14,7 @@ var streamify = require('gulp-streamify');
 var browserify = require('browserify');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
+var connect = require('gulp-connect');
 var reload = browserSync.reload;
 
 var paths = {
@@ -30,6 +31,14 @@ var paths = {
 
 var browserifyOpts = Immutable.Map({ from: paths.js.src, to: paths.js.dest, dist: paths.dist });
 var watchifyOpts = browserifyOpts.set('watch', true);
+
+gulp.task('server', ['build'], function() {
+ connect.server({
+    root: '.',
+    livereload: true
+  });
+
+});
 
 // ---
 gulp.task('serve', ['watch'], function () {
