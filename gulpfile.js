@@ -32,12 +32,12 @@ var paths = {
 var browserifyOpts = Immutable.Map({ from: paths.js.src, to: paths.js.dest, dist: paths.dist });
 var watchifyOpts = browserifyOpts.set('watch', true);
 
-gulp.task('server', ['build'], function() {
- connect.server({
-    root: '.',
-    livereload: true
+gulp.task('server', function() {
+    connect.server({
+        root: '.',
+        port: process.env.PORT || 5000, // localhost:5000
+        livereload: false
   });
-
 });
 
 // ---
