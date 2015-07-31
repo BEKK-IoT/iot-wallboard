@@ -1,5 +1,6 @@
 var React = require('react');
 var firebase = require('./firebase/firebase.js');
+var EventGraph = require('./Smoothie/eventgraph.js');
 
 module.exports = React.createClass({
 
@@ -7,29 +8,24 @@ module.exports = React.createClass({
         var that = this;
         firebase.child("devices/sensors").on("value", function(snapshot) {
             var val = snapshot.val();
-            console.log(val.light);
             that.setState({light : val.light});
         });
+        EventGraph.init(this.refs.container.getDOMNode());
+        this.setState({width : React.findDOMNode(this).offsetWidth});
     },
 
-    getInitialState: function() {
-        return {
-            fbevent: 'None',
-            light: false,
-            name: 'Firebase'
-        }
-    },
+    addEvent : function(){
 
-    changeValue: function(e) {
-        console.log("Heia");
     },
 
     render: function() {
-        return (
+            console.log(this.state);
+
+            return (
             <div>
-                <span className={this.state.light.on ? 'large-icon light-on' : 'large-icon'}>✹</span> 
+            <canvas width={ this.state.width} className="container" ref="container"></canvas>
             </div>
         );
     }
 
-}); 
+});
