@@ -1,6 +1,8 @@
 # Project specific
 node_modules/
 dist/
+*.log
+*~
 
 # IntelliJ
 .idea/
