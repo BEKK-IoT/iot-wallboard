@@ -1,6 +1,8 @@
 # Project specific
 node_modules/
 dist/
+*.log
+*~
 
 # IntelliJ
 .idea/
@@ -9,4 +11,3 @@ dist/
 
 # osx
 .DS_Store
-*~

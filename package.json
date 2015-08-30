@@ -4,47 +4,25 @@
   "description": "iot kurs",
   "main": "gulpfile.js",
   "dependencies": {
-    "browser-sync": "^2.7.1",
-    "browserify": "^10.1.3",
-    "del": "^1.1.1",
-    "gulp": "^3.8.11",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0",
-    "immutable": "^3.7.2",
-    "lodash": "^3.8.0",
+    "firebase": "^2.2.9",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "lodash": "^3.10.1",
     "react": "^0.13.3",
-    "reactify": "^1.1.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "browserify": "^6.2.0",
-    "del": "^0.1.3",
-    "esnext": "^0.13.0",
-    "firebase": "^2.2.6",
-    "gulp": "^3.8.11",
-    "gulp-connect": "^2.2.0",
-    "gulp-livereload": "^3.8.0",
-    "gulp-myth": "^1.0.1",
-    "gulp-rename": "^1.2.0",
-    "gulp-streamify": "^0.0.5",
-    "gulp-uglify": "^1.0.1",
-    "gulp-util": "^3.0.1",
-    "http": "0.0.0",
-    "react-grid-layout": "0.8.3",
-    "react-three": "^0.6.0",
-    "reactify": "^0.15.2",
-    "run-sequence": "^1.0.1",
-    "st": "^0.5.3",
-    "three": "^0.70.1",
-    "vinyl-source-stream": "^1.0.0",
-    "browser-sync": "^2.7.1",
-    "watchify": "^2.1.1"
-  },
-  "devDependencies": {
+    "react-grid-layout": "^0.8.5",
+    "three": "^0.71.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp build"
+    "build": "gulp build",
+    "serve": "gulp serve"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "babelify": "^6.2.0",
+    "browserify": "^11.0.1",
+    "gulp-connect": "^2.2.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
