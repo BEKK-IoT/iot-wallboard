@@ -56,3 +56,9 @@
 .react-grid-item:hover .react-grid-resize-handle {
 	opacity: 1;
 }
+
+#cy {
+	width: 300px;
+	height: 200px;
+}
+

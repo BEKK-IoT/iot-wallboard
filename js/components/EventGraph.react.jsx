@@ -1,17 +1,17 @@
 var React = require('react');
 var firebase = require('./firebase/firebase.js');
-var EventGraph = require('./Smoothie/eventgraph.js');
+var graph = require('./graph/eventgraph.js');
 
 module.exports = React.createClass({
 
     componentDidMount: function() {
+        console.log("Heia");
         var that = this;
-        firebase.child("devices/sensors").on("value", function(snapshot) {
+        firebase.child("users").on("value", function(snapshot) {
             var val = snapshot.val();
-            that.setState({light : val.light});
+            graph.createGraph(val);
         });
-        EventGraph.init(this.refs.container.getDOMNode());
-        this.setState({width : React.findDOMNode(this).offsetWidth});
+        graph.init(this.refs.container.getDOMNode());
     },
 
     addEvent : function(){
@@ -19,11 +19,10 @@ module.exports = React.createClass({
     },
 
     render: function() {
-            console.log(this.state);
-
+            console.log('render');
             return (
             <div>
-            <canvas width={ this.state.width} className="container" ref="container"></canvas>
+            <div id="cy" className="container" ref="container"></div>
             </div>
         );
     }
