@@ -7,12 +7,17 @@ var ResponsiveReactGridLayout = require('react-grid-layout').Responsive;
 var App = require('./components/App.react');
 var WebGLApp = require('./components/WebGLApp.react');
 var Firebase = require('./components/FirebaseEvent.react');
+var Users = require('./components/Users.react');
 
 /**
  * This layout demonstrates how to use a grid with a dynamic number of elements.
  */
 var AddRemoveLayout = React.createClass({
   mixins: [PureRenderMixin],
+  componentDidMount() {
+      console.log("ADDING USERS");
+      this.onAddItem(Users, 2, 6);
+  },
 
   getDefaultProps() {
     return {
