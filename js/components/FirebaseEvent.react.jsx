@@ -7,8 +7,11 @@ module.exports = React.createClass({
         var that = this;
         firebase.child("devices/sensors").on("value", function(snapshot) {
             var val = snapshot.val();
-            console.log(val.light);
-            that.setState({light : val.light});
+            if(val) {
+                console.log(val.light);
+                that.setState({light : val.light});
+            }
+
         });
     },
 
@@ -27,7 +30,7 @@ module.exports = React.createClass({
     render: function() {
         return (
             <div>
-                <span className={this.state.light.on ? 'large-icon light-on' : 'large-icon'}>✹</span> 
+                <span className={this.state.light.on ? 'large-icon light-on' : 'large-icon'}>✹</span>
             </div>
         );
     }

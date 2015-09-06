@@ -22,3 +22,4 @@ React.render(
 
 var Gridtest = require('./gridtest');
 var Grid = require('./grid')(Gridtest);
+var Users = require('./components/Users.react');

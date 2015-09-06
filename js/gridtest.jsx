@@ -14,11 +14,6 @@ var Users = require('./components/Users.react');
  */
 var AddRemoveLayout = React.createClass({
   mixins: [PureRenderMixin],
-  componentDidMount() {
-      console.log("ADDING USERS");
-      this.onAddItem(Users, 2, 6);
-  },
-
   getDefaultProps() {
     return {
       className: "layout",

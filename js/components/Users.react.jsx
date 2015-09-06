@@ -1,7 +1,10 @@
 var React = require('react');
 var firebase = require('./firebase/firebase.js');
+var IntervalUpdater = require('../mixins/IntervalUpdater.jsx');
+var User = require('./User.react.jsx');
 
-module.exports = React.createClass({
+var Users = React.createClass({
+    mixins: [IntervalUpdater],
     componentDidMount: function() {
         var that = this;
         var users = [];
@@ -23,7 +26,7 @@ module.exports = React.createClass({
 
             }
         });
-        setInterval(function() {
+        this.setInterval(function() {
             that.setState({users: users});
         }, 1000);
     },
@@ -39,17 +42,29 @@ module.exports = React.createClass({
     },
 
     render: function() {
-        return (
-            <div>
-                {this.state.users.map(function(user){
-                    if(user) {
-                        return <span>{{user}}</span>
-                    } else {
-                        return <span>No users</span>
+        var users = this.state.users.map(function(user) {
+                return <User user={user}></User>
+        });
+        if(users.length > 0) {
+            return (
+                <div>
+                    {
+                        this.state.users.map(function(user){
+                            return <User user={user}></User>
+                        })
                     }
-                })}
-            </div>
-        );
+                </div>
+            );
+        }
+        else {
+            return <User></User>
+        }
+
+
     }
 
 });
+var contentDiv = document.getElementById('users');
+React.render(React.createElement(Users), contentDiv);
+
+module.exports = Users;
