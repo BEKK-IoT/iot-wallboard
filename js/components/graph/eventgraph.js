@@ -91,7 +91,7 @@ var EventGraph = function(){
 		createGraph : function(data){
 			console.log(data);
 			//this.add(testElements);
-			console.log(testElements);
+			//console.log(testElements);
 			this.add(createElements(data));
 			//this.add(createElements(data));
 		}
