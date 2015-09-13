@@ -8,6 +8,7 @@ module.exports = React.createClass({
         console.log("Heia");
         var that = this;
         firebase.child("users").on("value", function(snapshot) {
+            console.log("yo firebase changed");
             var val = snapshot.val();
             graph.createGraph(val);
         });
