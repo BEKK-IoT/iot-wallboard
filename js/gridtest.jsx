@@ -71,7 +71,7 @@ var AddRemoveLayout = React.createClass({
   },
 
   onAddEventGraph(){
-    this.onAddItem(EventGraph,3,2);
+    this.onAddItem(EventGraph,6,4);
   },
 
   // We're using the cols coming back from this to calculate where to add new items.

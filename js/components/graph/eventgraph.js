@@ -73,7 +73,7 @@ var EventGraph = function(){
 			  //elements: testElements,
 			  
 			  layout: {
-			    name: 'grid',
+			    name: 'circle',
 			    padding: 10
 			  }
 			});
