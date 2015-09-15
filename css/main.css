@@ -56,3 +56,11 @@
 .react-grid-item:hover .react-grid-resize-handle {
 	opacity: 1;
 }
+
+#users {
+	position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 60px;
+    color: white;
+}
