@@ -57,10 +57,31 @@
 	opacity: 1;
 }
 
+#toggleExamples {
+	position: absolute;
+	top:0;
+	right: 0;
+	background-color: green;
+	color: white;
+}
+
+#example {
+	visibility: hidden;
+}
+
 #users {
 	position: absolute;
     top: 0;
     right: 0;
     margin-top: 60px;
     color: white;
+	width: 20%;
+	background-color: #fd5158;
+	height: 100%;
+}
+.user:first-child {
+	padding-top: 5px;
+}
+.user {
+	padding-left: 5px;
 }

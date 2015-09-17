@@ -5,11 +5,13 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/bekk.css">
 
+
 		<nav class="navigationFixed">
 			<div class="navigation-wrapper">
 				<ul id="navigation" class="navigation">
 					<li><a href="#dashboard" class="active">DashBoard</a></li>
 				</ul>
+				<div id="toggleExamples" onclick="toggleExamples()">Toggle</div>
 			</div>
 		</nav>
 
@@ -30,6 +32,21 @@
 			<!--div id="gridtest"></div-->
 		</main>
 		<script type="text/javascript" src="dist/bundle.js"></script>
+		<script type="text/javascript">
+			window.toggle = false;
+			function toggleExamples() {
+				if(window.toggle) {
+					document.getElementById("example").style.visibility = 'hidden';
+					window.toggle=false;
+				} else {
+					document.getElementById("example").style.visibility = 'visible';
+					window.toggle=true;
+				}
+
+
+
+			}
+		</script>
 
 	</body>
 

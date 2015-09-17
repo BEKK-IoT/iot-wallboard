@@ -1,7 +1,4 @@
 var React = require('react');
-var If = require('react-if');
-var Else = If.Else;
-var Then = If.Then;
 
 var User = React.createClass({
     componentDidMount: function() {
@@ -17,7 +14,7 @@ var User = React.createClass({
     render: function() {
         return (
             this.props.user ?
-                <div class='user'>
+                <div className='user'>
                     <span>{this.props.user}</span>
                     <span> - 0 points</span>
                 </div>

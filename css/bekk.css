@@ -602,6 +602,7 @@ label {
 }
 html {
 	font-size: 62.5%;
+	height: 100%;
 }
 body {
 	font-family: "Fedra Serif", Georgia, serif;
@@ -609,6 +610,7 @@ body {
 	font-size: 1.6rem;
 	line-height: 1.625;
 	color: #1b1b1b;
+	height: 100%;
 }
 a {
 	text-decoration: none;
@@ -1260,7 +1262,10 @@ ul.flex-space {
 /* Top menu
 ------------------------------------------------------------------------------*/
 .u-container {
-	margin-top: 160px;
+	margin-top: 60px;
+	float: left;
+	width: 80%;
+	height: 100%;
 }
 .navigation-wrapper {
 	overflow: hidden;
