@@ -18,7 +18,7 @@ var EventGraph = function(){
 				fontSize : 20,
 				fontWidth : 3
 			}, 
-			position: { x: 300, y: 300 },
+			position: { x: width/2, y: height/2 },
 			classes : "mainNode"
 		};
 	};
@@ -152,7 +152,7 @@ var EventGraph = function(){
 			});
 			var id = ele.id();
 			var eventNodes = cy.$( "." + id.replace(" ", "_") );
-			setEventNodePositions(eventNodes, ele.position(), angle, width/5);
+			setEventNodePositions(eventNodes, ele.position(), angle, width/4.8);
 			angle += angledelta;
 		});
 	};
@@ -160,6 +160,8 @@ var EventGraph = function(){
 	return {
 
 		init : function(container){
+			width = container.offsetWidth;
+			height = container.offsetHeight;
 			cy = cytoscape({
 			  container: container,
 
