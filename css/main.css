@@ -58,20 +58,30 @@
 }
 
 #users {
-	position: absolute;
     color: white;
-	width: 20%;
 	/*background-color: #fd5158;*/
-	border: 1px solid #bbb0a3;
-	height: 97%;
+	/*border: 1px solid #bbb0a3;*/
 	font-weight: bold;
     text-transform: uppercase;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 25px;
 }
-.user:first-child {
-	padding-top: 5px;
-}
+
 .user {
-	padding-left: 5px;
+	width: 15%;
+	float : left;
+	border: 1px solid #fd5158;
+	text-align: center;
+}
+
+.game {
+	height: 260px;
+}
+
+.temp {
+	background-color: #df565b;
+	height: 260px;
 }
 #cy {
 	background-color: #252525;
