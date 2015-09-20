@@ -4,13 +4,14 @@
   "description": "iot kurs",
   "main": "gulpfile.js",
   "dependencies": {
+    "cytoscape": "^2.4.8",
     "firebase": "^2.2.9",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-grid-layout": "^0.8.5",
-    "three": "^0.71.1"
+    "three": "^0.70.0"
   },
   "scripts": {
     "build": "gulp build",

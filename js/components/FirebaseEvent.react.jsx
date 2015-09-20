@@ -24,7 +24,7 @@ module.exports = React.createClass({
     },
 
     changeValue: function(e) {
-
+        console.log("Heia");
     },
 
     render: function() {

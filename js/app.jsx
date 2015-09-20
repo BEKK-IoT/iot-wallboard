@@ -1,10 +1,10 @@
 var React = require('react');
+var App = require('./components/App.react');
+var WebGLApp = require('./components/WebGLApp.react');
+var Users = require('./components/Users.react');
+var EventGraphApp = require('./components/EventGraph.react');
 
-//var App = require('./components/App.react');
-//var WebGLApp = require('./components/WebGLApp.react');
-//var Grid = require('./grid');
-
-/*React.render(
+React.render(
     <App />,
     document.getElementById('app')
 );
@@ -13,13 +13,9 @@ React.render(
 	<WebGLApp />,
 	document.getElementById('webgl')
 );
-*/
 
-/*React.render(
-	<Grid />,
-	document.getElementById('example')
-)*/
+React.render(
+	<EventGraphApp />,
+	document.getElementById('graph')
+);
 
-var Gridtest = require('./gridtest');
-var Grid = require('./grid')(Gridtest);
-var Users = require('./components/Users.react');

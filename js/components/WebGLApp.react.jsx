@@ -8,22 +8,28 @@ module.exports = React.createClass({
 
 	componentDidMount : function() {
         var that = this;
-        firebase.child("rest/").on("value", function(snapshot) {
-            that.setState({fbevent : snapshot.val()});
+        firebase.child("devices/sensors").on("value", function(snapshot) {
+            var val = snapshot.val();
+            that.setState({light : val.light});
         });
-		var container = this.refs.container.getDOMNode();
-    	webglWidget.init( container);
+    	webglWidget.init( this.refs.container.getDOMNode());
         webglWidget.animate();
 	},
 
-    makeGlow : function(){
-        webglWidget.makeSphereGlow();
+    getInitialState: function() {
+        return {
+            light: false,
+        }
     },
 
+
     render: function() {
+        if(this.state.light.on){
+            webglWidget.makeSphereGlow();
+        }
         return (
         	<div>
-        	<div onClick={this.makeGlow} className="container" ref="container"></div>
+        	<div onClick={webglWidget.makeSphereGlow} className="container" ref="container"></div>
         	</div>
         );
     }
