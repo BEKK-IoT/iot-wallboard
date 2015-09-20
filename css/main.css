@@ -78,6 +78,8 @@
 	width: 20%;
 	background-color: #fd5158;
 	height: 100%;
+	font-weight: bold;
+    text-transform: uppercase;
 }
 .user:first-child {
 	padding-top: 5px;
