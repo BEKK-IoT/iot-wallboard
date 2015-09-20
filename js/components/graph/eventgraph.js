@@ -7,16 +7,21 @@ var EventGraph = function(){
 	var cy, eles;
 
 	var width = 600;
-	var height = 400; 
+	var height = 600; 
 
-	var testElements = {
-		nodes : [
-			{ data : {id : "1", name : "node1" , nodecolor : "#df565b" } ,position: { x: 200, y: 100 } },
-			{ data : {id : '2', name : "node2", nodecolor : "#df565b"}, position: { x: 200, y: 200 }  }
-		],
-		edges : [
-			{ data : {source : '1', target : '2'} }
-		]
+	var createMainNode = function(){
+		return { 
+			data : {
+				id : "mainNode", 
+				name : "Gruppe", 
+				nodecolor : "#df565b",
+				weight: 60,
+				fontSize : 20,
+				fontWidth : 3
+			}, 
+			position: { x: 300, y: 300 },
+			classes : "mainNode"
+		};
 	};
 
 	var createUserNode = function(user){
@@ -65,10 +70,13 @@ var EventGraph = function(){
 
 		var keys = Object.keys(data);
 		var counter = 0;
+		var mainNode = createMainNode();
+		elements.nodes.push(mainNode);
 		_.each(keys, function(user){
 			//var container = crateNodeContainer(counter++);
 			//elements.nodes.push(container)
 			elements.nodes.push(createUserNode(user));
+			elements.edges.push(createEdge(mainNode, user));
 			_.each(Object.keys(data[user]),function(fevent){
 				elements.nodes.push(createEventNode(fevent, user));
 				elements.edges.push(createEdge(user,user + fevent));
@@ -76,10 +84,6 @@ var EventGraph = function(){
 		});
 		console.log(elements);
 		return elements;
-
-	};
-
-	var setEventPos = function(){
 
 	};
 
@@ -96,15 +100,20 @@ var EventGraph = function(){
         return { nx : nx , ny : ny};
 	};
 
-	var setEventNodePositions = function(eventNodes, parentpos,scale){
+	var setEventNodePositions = function(eventNodes, parentpos,ang, scale){
 		var radius = scale;
-		var ang = 0.777;
+		var ang = ang;
+		var delta = (3.14 / 3) /eventNodes.length;
 		eventNodes.each(function(i, ele){
+			var r = radius;
+			if(i % 2 === 1)
+				 r -= radius /4;
+
 			ele.position({
-				x : parentpos.x + radius * Math.cos(ang),
-				y : parentpos.y + radius * Math.sin(ang)
+				x : parentpos.x + r * Math.cos(ang),
+				y : parentpos.y + r * Math.sin(ang)
 			});
-			ang += 0.6;
+			ang += delta;
 		});
 	};
 
@@ -130,6 +139,25 @@ var EventGraph = function(){
 			setEventNodePositions(eventNodes, ele.position(), scaleY/4*3 );
 		});
 	};
+
+	var setPositionsCircle = function(){
+		console.log(cy.elements());
+		var userNodes = cy.$( ".userNode" );
+		var angledelta = 6.28 / (userNodes.length);
+		var angle = 0;
+		var radius = width/6;
+		userNodes.each(function(i, ele){
+			ele.position({
+				x : width/2 + Math.cos(angle) * radius,
+				y : height/2 + Math.sin(angle) * radius
+			});
+			var id = ele.id();
+			var eventNodes = cy.$( "." + id.replace(" ", "_") );
+			setEventNodePositions(eventNodes, ele.position(), angle, width/5);
+			angle += angledelta;
+		});
+	};
+
 	return {
 
 		init : function(container){
@@ -185,7 +213,7 @@ var EventGraph = function(){
 				this.remove(eles);
 			}
 			eles = this.add(createElements(data));
-			setPositions();
+			setPositionsCircle();
 			cy.reset();
 		}
 	}

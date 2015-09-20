@@ -73,5 +73,9 @@
 #cy {
 	background-color: #252525;
 	width: 600px;
-	height : 400px;
+	height : 600px;
+	/*width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;*/
 }
