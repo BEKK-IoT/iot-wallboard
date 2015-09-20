@@ -4,6 +4,7 @@
   "description": "iot kurs",
   "main": "gulpfile.js",
   "dependencies": {
+    "cytoscape": "^2.4.8",
     "firebase": "^2.2.9",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",

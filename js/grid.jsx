@@ -6,7 +6,7 @@ var React = require('react');
 typeof window !== "undefined" && (window.React = React); // for devtools
 
 module.exports = function(Layout) {
-  document.addEventListener("DOMContentLoaded", function(event) { 
+  document.addEventListener("DOMContentLoaded", function(event) {
     var contentDiv = document.getElementById('example');
     var gridProps = window.gridProps || {};
     React.render(React.createElement(ExampleLayout, gridProps), contentDiv);
@@ -31,6 +31,6 @@ module.exports = function(Layout) {
         </div>
       );
     }
-    
+
   });
 };

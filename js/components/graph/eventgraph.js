@@ -1,8 +1,7 @@
-var Chartist = require('chartist')
 var cytoscape = require('cytoscape');
 var _ = require('lodash');
 
-var EventGraph = function(){ 
+var EventGraph = function(){
 
 	var cy, eles;
 
@@ -25,15 +24,15 @@ var EventGraph = function(){
 	};
 
 	var createUserNode = function(user){
-		return { 
+		return {
 			data : {
-				id : user, 
-				name : user.replace(" ", "\n"), 
+				id : user,
+				name : user.replace(" ", "\n"),
 				nodecolor : "#df565b",
 				weight: 30,
 				fontSize : 15,
 				fontWidth : 2
-			}, 
+			},
 			position: { x: 100, y: 100 },
 			classes : "userNode"
 		};
@@ -41,15 +40,15 @@ var EventGraph = function(){
 
 	var createEventNode = function(fevent, parent){
 		var classname = parent.replace(" ", "_");
-		return { 
+		return {
 			data : {
-				id : parent + fevent, 
-				name : fevent, 
+				id : parent + fevent,
+				name : fevent,
 				nodecolor : "#28bcb3",
 				weight: 20,
 				fontSize : 11,
 				fontWidth : 1
-			}, 
+			},
 			position: { x: 100, y: 200 },
 			classes : "eventNode " + classname};
 	};
@@ -76,7 +75,7 @@ var EventGraph = function(){
 			//var container = crateNodeContainer(counter++);
 			//elements.nodes.push(container)
 			elements.nodes.push(createUserNode(user));
-			elements.edges.push(createEdge(mainNode, user));
+			elements.edges.push(createEdge(mainNode.data.id, user));
 			_.each(Object.keys(data[user]),function(fevent){
 				elements.nodes.push(createEventNode(fevent, user));
 				elements.edges.push(createEdge(user,user + fevent));
@@ -145,7 +144,7 @@ var EventGraph = function(){
 		var userNodes = cy.$( ".userNode" );
 		var angledelta = 6.28 / (userNodes.length);
 		var angle = 0;
-		var radius = width/6;
+		var radius = width/4;
 		userNodes.each(function(i, ele){
 			ele.position({
 				x : width/2 + Math.cos(angle) * radius,
@@ -163,7 +162,7 @@ var EventGraph = function(){
 		init : function(container){
 			cy = cytoscape({
 			  container: container,
-			  
+
 			  style: cytoscape.stylesheet()
 			    .selector('node')
 			      .css({
@@ -185,14 +184,14 @@ var EventGraph = function(){
 			        'source-arrow-color': 'black',
 			        'text-outline-color': 'black'
 			      }),
-			  
+
 			  //elements: testElements,
 			  userPanningEnabled : false,
-			  
+
 			  layout: {
 			    name: 'preset',
 			    padding: 10
-			  }, 
+			  },
 			});
 			console.log(cy);
 		},

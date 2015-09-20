@@ -61,8 +61,11 @@
 	position: absolute;
     color: white;
 	width: 20%;
-	background-color: #fd5158;
+	/*background-color: #fd5158;*/
+	border: 1px solid #bbb0a3;
 	height: 97%;
+	font-weight: bold;
+    text-transform: uppercase;
 }
 .user:first-child {
 	padding-top: 5px;
@@ -74,6 +77,7 @@
 	background-color: #252525;
 	width: 600px;
 	height : 600px;
+	border: 1px solid #bbb0a3;
 	/*width: 100%;
 	position: absolute;
 	left: 0;
