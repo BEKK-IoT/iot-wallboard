@@ -490,7 +490,7 @@ label {
 	}
 }
 .u-container {
-	background:#252525;
+	background-color:#252525;
 	display: block;
 	padding: 0 40px;
 	margin: 27px auto;
@@ -1263,9 +1263,6 @@ ul.flex-space {
 ------------------------------------------------------------------------------*/
 .u-container {
 	margin-top: 60px;
-	float: left;
-	width: 80%;
-	height: 100%;
 }
 .navigation-wrapper {
 	overflow: hidden;

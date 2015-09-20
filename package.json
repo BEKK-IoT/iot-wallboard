@@ -10,7 +10,7 @@
     "lodash": "^3.10.1",
     "react": "^0.13.3",
     "react-grid-layout": "^0.8.5",
-    "three": "^0.71.1"
+    "three": "^0.70.0"
   },
   "scripts": {
     "build": "gulp build",

@@ -24,7 +24,7 @@ module.exports = React.createClass({
             console.log('render');
             return (
             <div>
-            <div id="cy" className="container" style={{"height" : "400px", "width" : "700px"}} ref="container"></div>
+            <div id="cy" className="container"  ref="container"></div>
             </div>
         );
     }

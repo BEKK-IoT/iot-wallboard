@@ -52,7 +52,7 @@ var webglWidget = function () {
 	return {
 		init : function( DOMcontainer ){
 			container = DOMcontainer; 
-			var width = 300;
+			var width = container.clientWidth;
 			var height = 300;
 			//window.addEventListener('resize', onWindowResize, false); 
 
