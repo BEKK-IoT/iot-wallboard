@@ -20,7 +20,6 @@ var User = React.createClass({
         return (
             <div className='user'>
                 <span>{this.props.user}</span>
-                //<span>{this.state.points ? ' '+ this.state.points +' points' : ''}</span>
             </div>
         );
     }
