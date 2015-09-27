@@ -53,12 +53,13 @@ var EventGraph = function(){
 			classes : "eventNode " + classname};
 	};
 
-	/*var crateNodeContainer = function(counter){
-		return { data : {id : "container" + counter, name : "", nodecolor : "transparent"}};
-	};*/
-
 	var createEdge = function(source, target){
 		return { data : {source : source, target : target} }
+	};
+
+	var checkIfRegistered = function(events){
+		return events.registered;
+
 	};
 
 	var createElements = function(data){
@@ -66,22 +67,19 @@ var EventGraph = function(){
 			nodes : [],
 			edges : []
 		};
-
-		var keys = Object.keys(data);
-		var counter = 0;
 		var mainNode = createMainNode();
 		elements.nodes.push(mainNode);
-		_.each(keys, function(user){
-			//var container = crateNodeContainer(counter++);
-			//elements.nodes.push(container)
-			elements.nodes.push(createUserNode(user));
-			elements.edges.push(createEdge(mainNode.data.id, user));
-			_.each(Object.keys(data[user]),function(fevent){
-				elements.nodes.push(createEventNode(fevent, user));
-				elements.edges.push(createEdge(user,user + fevent));
-			});
+		_.forEach(data,function(events, user){
+			if(checkIfRegistered(events)){
+				elements.nodes.push(createUserNode(user));
+				elements.edges.push(createEdge(mainNode.data.id, user));
+				_.forEach(events, function(value, fevent){
+					elements.nodes.push(createEventNode(fevent, user));
+					elements.edges.push(createEdge(user,user + fevent));
+				});
+			}
+
 		});
-		console.log(elements);
 		return elements;
 
 	};
@@ -116,35 +114,11 @@ var EventGraph = function(){
 		});
 	};
 
-	var setPositions = function(){
-		console.log(cy.elements());
-		var userNodes = cy.$( ".userNode" );
-		var grid = createNodeGrid(userNodes.length);
-		var scale = width /(grid.nx*2);
-		var scaleY = height/(grid.ny*2);
-		var posX = 0; var posY = 0;
-		userNodes.each(function(i, ele){
-			if(posX >= grid.nx){
-				posX = 0;
-				posY++;
-			}
-			ele.position({
-				x : scale + posX++*scale*2,
-				y : scaleY + posY*scaleY*2
-			});
-
-			var id = ele.id();
-			var eventNodes = cy.$( "." + id.replace(" ", "_") );
-			setEventNodePositions(eventNodes, ele.position(), scaleY/4*3 );
-		});
-	};
-
 	var setPositionsCircle = function(){
-		console.log(cy.elements());
 		var userNodes = cy.$( ".userNode" );
 		var angledelta = 6.28 / (userNodes.length);
 		var angle = 0;
-		var radius = width/4;
+		var radius = width/4.5;
 		userNodes.each(function(i, ele){
 			ele.position({
 				x : width/2 + Math.cos(angle) * radius,
@@ -152,7 +126,7 @@ var EventGraph = function(){
 			});
 			var id = ele.id();
 			var eventNodes = cy.$( "." + id.replace(" ", "_") );
-			setEventNodePositions(eventNodes, ele.position(), angle, width/4.8);
+			setEventNodePositions(eventNodes, ele.position(), angle, width/4.5);
 			angle += angledelta;
 		});
 	};
