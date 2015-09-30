@@ -84,19 +84,6 @@ var EventGraph = function(){
 
 	};
 
-	var createPositionArray = function(n){
-		var positions = [];
-
-        console.log(nx, ny);
-		return positions;
-	};
-
-	var createNodeGrid = function(n){
-		var ny = Math.floor(Math.sqrt(n))
-        var nx = Math.ceil(n/ny)
-        return { nx : nx , ny : ny};
-	};
-
 	var setEventNodePositions = function(eventNodes, parentpos,ang, scale){
 		var radius = scale;
 		var ang = ang;
