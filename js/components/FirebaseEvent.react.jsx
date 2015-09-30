@@ -29,7 +29,7 @@ module.exports = React.createClass({
     render: function() {
 
         var divStyle = {
-            border: "4px solid rgb("+this.state.red+", "+this.state.green+", "+this.state.blue+")"
+            border: "4px solid rgba("+this.state.red+", "+this.state.green+", "+this.state.blue+", 0.5)"
         };
         return (
             <div id="circle" style={divStyle}>
