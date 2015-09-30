@@ -76,7 +76,9 @@
 }
 
 .game {
-	height: 260px;
+	height: 380px;
+	width: 100%;
+	float: left;
 }
 
 #sphero{
@@ -102,20 +104,20 @@
 }
 
 .sphero-axel-value{
-	font-size: 40px;
+	font-size: 30px;
 	color: #28bcb3;
 	width: 33%;
 	float : left;
 	text-align: center;
-	margin-top: -15px;
-	margin-bottom: -5px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
 
 .sphero-info{
 	font-size: 30px;
 	color: #28bcb3;
 	text-align: center;
-	margin-top: -5px;
+	margin-top: 0px;
 	margin-bottom: -5px;
 }
 
@@ -147,6 +149,10 @@
 	margin-bottom: 5%;
 }
 
+#stats {
+	margin-top: 30px; 
+}
+
 .stats-element{
 	color : white;
 	font-size: 15px;
@@ -157,7 +163,6 @@
 .stats-letter{
 	/*color: #28bcb3;*/
 	font-size: 25px;
-	border-bottom: 1px solid #fd5158;
 }
 
 .stats-key{

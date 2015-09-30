@@ -6,6 +6,8 @@
     <script src="https://cdn.firebase.com/js/client/2.2.9/firebase.js"></script>
   </head>
    <body>
+     <canvas id='myGame' width='680' height='500'></canvas>
+
      <script>
 
      var url = "https://fiery-inferno-7517.firebaseio.com/gadgets/game/move";
@@ -21,7 +23,7 @@
       // Now set up your game (most games will load a separate .js file)
         var Q = Quintus()                          // Create a new engine instance
           .include("Sprites, Scenes, Input, 2D, Touch, UI") // Load any needed modules
-          .setup()                           // Add a canvas element onto the page
+          .setup('myGame')                           // Add a canvas element onto the page
           .controls()                        // Add in default controls (keyboard, buttons)
           .touch();                          // Add in touch support (for the UI)
 
@@ -68,7 +70,7 @@
 
         Q.Sprite.extend("Player",{
           init: function(p) {
-            this._super(p, { sheet: "player", x: 410, y: 90 });
+            this._super(p, { sheet: "player", x: 410, y: 190 });
             this.add('2d, platformerControls');
 
             this.on("hit.sprite",function(collision) {

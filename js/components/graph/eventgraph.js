@@ -15,7 +15,7 @@ var EventGraph = function(){
 				name : "users", 
 				nodecolor : "#df565b",
 				weight: 60,
-				fontSize : 20,
+				fontSize : 30,
 				fontWidth : 3
 			}, 
 			position: { x: width/2, y: height/2 },
@@ -30,7 +30,7 @@ var EventGraph = function(){
 				name : user.replace(" ", "\n"),
 				nodecolor : "#df565b",
 				weight: 30,
-				fontSize : 15,
+				fontSize : 18,
 				fontWidth : 2
 			},
 			position: { x: 100, y: 100 },
@@ -46,7 +46,7 @@ var EventGraph = function(){
 				name : fevent,
 				nodecolor : "#28bcb3",
 				weight: 20,
-				fontSize : 11,
+				fontSize : 15,
 				fontWidth : 1
 			},
 			position: { x: 100, y: 200 },
@@ -87,7 +87,7 @@ var EventGraph = function(){
 	var setEventNodePositions = function(eventNodes, parentpos,ang, scale){
 		var radius = scale;
 		var ang = ang;
-		var delta = (3.14 / 3) /eventNodes.length;
+		var delta = (3.14 / 3.5) /eventNodes.length;
 		eventNodes.each(function(i, ele){
 			var r = radius;
 			if(i % 2 === 1)
@@ -105,7 +105,7 @@ var EventGraph = function(){
 		var userNodes = cy.$( ".userNode" );
 		var angledelta = 6.28 / (userNodes.length);
 		var angle = 0;
-		var radius = width/4.5;
+		var radius = width/5.0;
 		userNodes.each(function(i, ele){
 			ele.position({
 				x : width/2 + Math.cos(angle) * radius,
@@ -113,7 +113,7 @@ var EventGraph = function(){
 			});
 			var id = ele.id();
 			var eventNodes = cy.$( "." + id.replace(" ", "_") );
-			setEventNodePositions(eventNodes, ele.position(), angle, width/4.5);
+			setEventNodePositions(eventNodes, ele.position(), angle, width/4.0);
 			angle += angledelta;
 		});
 	};
