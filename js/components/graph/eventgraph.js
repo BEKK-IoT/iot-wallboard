@@ -12,7 +12,7 @@ var EventGraph = function(){
 		return { 
 			data : {
 				id : "mainNode", 
-				name : "Gruppe", 
+				name : "Users", 
 				nodecolor : "#df565b",
 				weight: 60,
 				fontSize : 20,

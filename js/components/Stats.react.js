@@ -29,7 +29,7 @@ var Stats = React.createClass({
                 <div className="stats-element"><div className="stats-value">{this.state.totalNumberOfGameEvents}</div><div className="stats-key"><span className="stats-letter">G</span>ame events</div> </div>
             	<div className="stats-element">< div className="stats-value"> {this.state.totalNumberOfSpheroEvents}</div><div className="stats-key"><span className="stats-letter">S</span>phero events</div></div>
             	<div className="stats-element"><div className="stats-value"> {this.state.totalNumberOfLampEvents}</div><div className="stats-key"><span className="stats-letter">L</span>ight events</div> </div>
-            	<div className="stats-element">< div className="stats-value">{this.state.totalNumberOfSpheroEvents}</div><div className="stats-key"><span className="stats-letter">U</span>ser events</div></div>
+            	<div className="stats-element">< div className="stats-value">{this.state.totalNumberOfUserEvents}</div><div className="stats-key"><span className="stats-letter">U</span>ser events</div></div>
             </div>
         );
     }

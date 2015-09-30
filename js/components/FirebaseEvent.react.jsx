@@ -5,11 +5,10 @@ module.exports = React.createClass({
 
     componentDidMount: function() {
         var that = this;
-        firebase.child("devices/sensors").on("value", function(snapshot) {
+        firebase.child("gadgets/sphero/color").on("value", function(snapshot) {
             var val = snapshot.val();
             if(val) {
-                console.log(val.light);
-                that.setState({light : val.light});
+                that.setState(val);
             }
 
         });
@@ -17,9 +16,9 @@ module.exports = React.createClass({
 
     getInitialState: function() {
         return {
-            fbevent: 'None',
-            light: false,
-            name: 'Firebase'
+            red: 0,
+            blue: 0,
+            green: 0
         }
     },
 
@@ -28,9 +27,16 @@ module.exports = React.createClass({
     },
 
     render: function() {
+
+        var divStyle = {
+            border: "4px solid rgb("+this.state.red+", "+this.state.green+", "+this.state.blue+")"
+        };
         return (
-            <div>
-                <span className={this.state.light.on ? 'large-icon light-on' : 'large-icon'}>✹</span>
+            <div id="circle" style={divStyle}>
+                <div className="color">Color</div>
+                <div className="color color-number">{this.state.red}</div>
+                <div className="color color-number">{this.state.green}</div>
+                <div className="color color-number">{this.state.blue}</div>
             </div>
         );
     }

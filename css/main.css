@@ -71,7 +71,7 @@
 .user {
 	width: 20%;
 	float : left;
-	border: 1px solid #fd5158;
+	border: 1px solid #bbb0a3;
 	text-align: center;
 }
 
@@ -119,6 +119,34 @@
 	margin-bottom: -5px;
 }
 
+#circle{
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%x;
+    border-radius: 50%; 
+    border: 3px solid #fd5158;
+    width: 80%;
+    margin-left: 10%;
+	height: 0;
+    padding-bottom: 80%;
+    float: left;
+
+}
+
+.color{
+	text-transform: uppercase;
+	width: 100%;
+	float: left;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	margin-top: 5%;
+}
+
+.color-number{
+	font-size: 20px;
+	margin-bottom: 5%;
+}
+
 .stats-element{
 	color : white;
 	font-size: 15px;
@@ -133,13 +161,13 @@
 }
 
 .stats-key{
-	width: 83%;
+	width: 55%;
 	float: left;
 	text-transform: uppercase;
 	padding-left: 2%
 }
 .stats-value{
-	width: 15%;
+	width: 45%;
 	float: left;
 	font-size: 25px;
 	color: #28bcb3;

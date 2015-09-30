@@ -5,6 +5,7 @@ var Users = require('./components/Users.react');
 var EventGraphApp = require('./components/EventGraph.react');
 var SpheroApp = require('./components/Sphero.react');
 var StatsApp = require('./components/Stats.react');
+var FirebaseApp = require('./components/FirebaseEvent.react');
 
 React.render(
 	<EventGraphApp />,
@@ -19,5 +20,10 @@ React.render(
 React.render(
 	<StatsApp />,
 	document.getElementById('stats')
+);
+
+React.render(
+	<FirebaseApp />,
+	document.getElementById('color')
 );
 
