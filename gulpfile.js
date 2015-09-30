@@ -22,6 +22,8 @@ gulp.task('babelify', function() {
 
 gulp.task('connect', function() {
   connect.server({
+    root: '.',
+    port: process.env.PORT || 8080,
     livereload: true
   });
 });
