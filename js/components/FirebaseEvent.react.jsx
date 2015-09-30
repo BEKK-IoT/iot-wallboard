@@ -29,14 +29,14 @@ module.exports = React.createClass({
     render: function() {
 
         var divStyle = {
-            border: "4px solid rgb("+this.state.red+", "+this.state.blue+", "+this.state.green+")"
+            border: "4px solid rgb("+this.state.red+", "+this.state.green+", "+this.state.blue+")"
         };
         return (
             <div id="circle" style={divStyle}>
                 <div className="color">Color</div>
                 <div className="color color-number">{this.state.red}</div>
-                <div className="color color-number">{this.state.blue}</div>
                 <div className="color color-number">{this.state.green}</div>
+                <div className="color color-number">{this.state.blue}</div>
             </div>
         );
     }
