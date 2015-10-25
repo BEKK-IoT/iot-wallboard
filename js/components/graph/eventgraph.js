@@ -27,7 +27,7 @@ var EventGraph = function(){
 		return {
 			data : {
 				id : user,
-				name : user.replace(" ", "\n"),
+				name : user.replace(/\s/g, "\n"),
 				nodecolor : "#df565b",
 				weight: 30,
 				fontSize : 18,
@@ -39,7 +39,7 @@ var EventGraph = function(){
 	};
 
 	var createEventNode = function(fevent, parent){
-		var classname = parent.replace(" ", "_");
+		var classname = parent.replace(/[^0-9a-zA-ZæøåÆØÅ]+/g, "");
 		return {
 			data : {
 				id : parent + fevent,
@@ -112,7 +112,8 @@ var EventGraph = function(){
 				y : height/2 + Math.sin(angle) * radius
 			});
 			var id = ele.id();
-			var eventNodes = cy.$( "." + id.replace(" ", "_") );
+			var eventNodes = cy.$( "." + id.replace(/[^0-9a-zA-ZæøåÆØÅ]+/g, "") );
+			console.log(eventNodes);
 			setEventNodePositions(eventNodes, ele.position(), angle, width/4.0);
 			angle += angledelta;
 		});
