@@ -70,7 +70,7 @@
 
         Q.Sprite.extend("Player",{
           init: function(p) {
-            this._super(p, { sheet: "player", x: 410, y: 190 });
+            this._super(p, { sheet: "player", x: 410, y: 220 });
             this.add('2d, platformerControls');
 
             this.on("hit.sprite",function(collision) {
@@ -122,19 +122,8 @@
         });
 
         Q.scene('endGame',function(stage) {
-          var box = stage.insert(new Q.UI.Container({
-            x: Q.width/2, y: Q.height/2, fill: "rgba(0,0,0,0.5)"
-          }));
-
-          var button = box.insert(new Q.UI.Button({ x: 0, y: 0, fill: "#CCCCCC",
-                                                   label: "Play Again" }))
-          var label = box.insert(new Q.UI.Text({x:10, y: -10 - button.p.h,
-                                                label: stage.options.label }));
-          button.on("click",function() {
-            Q.clearStages();
-            Q.stageScene('level1');
-          });
-          box.fit(20);
+          Q.clearStages();
+          Q.stageScene('level1');
         });
 
         Q.load("sprites.png, sprites.json, level.json, tiles.png", function() {
