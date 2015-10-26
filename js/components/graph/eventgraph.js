@@ -39,7 +39,7 @@ var EventGraph = function(){
 	};
 
 	var createEventNode = function(fevent, parent){
-		var classname = parent.replace(/[^0-9a-zA-ZæøåÆØÅ]+/g, "");
+		var classname = parent.replace(/[^0-9a-zA-Z]+/g, "");
 		return {
 			data : {
 				id : parent + fevent,
@@ -112,7 +112,7 @@ var EventGraph = function(){
 				y : height/2 + Math.sin(angle) * radius
 			});
 			var id = ele.id();
-			var eventNodes = cy.$( "." + id.replace(/[^0-9a-zA-ZæøåÆØÅ]+/g, "") );
+			var eventNodes = cy.$( "." + id.replace(/[^0-9a-zA-Z]+/g, "") );
 			console.log(eventNodes);
 			setEventNodePositions(eventNodes, ele.position(), angle, width/4.0);
 			angle += angledelta;
