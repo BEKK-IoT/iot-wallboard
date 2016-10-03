@@ -6,15 +6,10 @@ var EventGraphApp = require('./components/EventGraph.react');
 var SpheroApp = require('./components/Sphero.react');
 var StatsApp = require('./components/Stats.react');
 var FirebaseApp = require('./components/FirebaseEvent.react');
- 
+
 React.render(
 	<EventGraphApp />,
 	document.getElementById('graph')
-);
-
-React.render(
-	<SpheroApp />,
-	document.getElementById('sphero')
 );
 
 React.render(
@@ -26,4 +21,3 @@ React.render(
 	<FirebaseApp />,
 	document.getElementById('color')
 );
-

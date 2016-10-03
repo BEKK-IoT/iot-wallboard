@@ -1,4 +1,4 @@
 var Firebase = require('firebase');
-var ref = new Firebase("https://fiery-inferno-7517.firebaseio.com/");
+var ref = new Firebase('https://beacon-wallboard.firebaseio.com/');
 
 module.exports = ref;
