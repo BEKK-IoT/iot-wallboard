@@ -1,0 +1,43 @@
+beacons : [
+  {
+    "minor":1,
+    "color":"#CCFFCC",
+    "name":"mint1"
+  },
+  {
+    "minor":2,
+    "color":"#666699",
+    "name":"blueberry"
+  },
+  {
+    "minor":3,
+    "color":"#CCFFFF",
+    "name":"ice"
+  },
+  {
+    "minor":4,
+    "color":"#CCFFCC",
+    "name":"mint2"
+  },
+  {
+    "minor":5,
+    "color":"#663300",
+    "name":"chocolateicecream"
+  },
+  {
+    "minor":6,
+    "color":"#FFCCCC",
+    "name":"bubblegum"
+  },
+  {
+    "minor":7,
+    "color":"#990066",
+    "name":"merlot"
+  },
+  {
+    "minor":8,
+    "color":"#663300",
+    "name":"chocolateicecream2"
+  },
+
+]
