@@ -11,3 +11,5 @@ dist/
 
 # osx
 .DS_Store
+
+firebase-debug.log
