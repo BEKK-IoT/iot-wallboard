@@ -7,7 +7,12 @@ let _ = require('lodash');
 var Beacon = React.createClass({
   render: function() {
     let beaconClass = this.props.name +' beacon'
-    return (<div className={beaconClass}>{this.props.number}</div>);
+    if(this.props.number === 0) {
+      return (<div></div>)
+    } else {
+        return (<div className={beaconClass}>{this.props.number}</div>);
+    }
+
   }
 })
 
