@@ -124,7 +124,7 @@
 #circle{
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%x;
-    border-radius: 50%; 
+    border-radius: 50%;
     border: 3px solid #fd5158;
     width: 80%;
     margin-left: 10%;
@@ -150,7 +150,7 @@
 }
 
 #stats {
-	margin-top: 30px; 
+	margin-top: 30px;
 }
 
 .stats-element{
@@ -190,4 +190,57 @@
 	width: 100%;
 	height: 0;
     padding-bottom: 100%;
+}
+
+#beacons {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.beacon {
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	line-height: 100px;
+	color:white;
+	font-size: 50px;
+	font-weight: bold;
+
+}
+
+.mint {
+	background-image: url("../images/mint.png");
+	background-size: 100px 100px;
+}
+
+.mint1 {
+	background-image: url("../images/mint.png");
+	background-size: 100px 100px;
+}
+
+.chocolateicecream {
+	background-image: url("../images/mint.png");
+	background-size: 100px 100px;
+}
+
+.chocolateicecream1 {
+	background-image: url("../images/mint.png");
+	background-size: 100px 100px;
+}
+
+.ice {
+	background-image: url("../images/beacon_light_blue.png");
+	background-size: 100px 100px;
+}
+
+.blueberry {
+	background-image: url("../images/blueberry.png");
+	background-size: 90px 120px;
+}
+
+.merlot {
+	background-image: url("../images/merlot.png");
+	background-size: 70px 100px;
 }
