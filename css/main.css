@@ -215,6 +215,11 @@
 	background-size: 100px 100px;
 }
 
+.lemon {
+	background-image: url("../images/lemon.png");
+	background-size: 100px 100px;
+}
+
 .mint1 {
 	background-image: url("../images/mint.png");
 	background-size: 100px 100px;
