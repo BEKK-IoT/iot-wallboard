@@ -220,6 +220,11 @@
 	background-size: 110px 130px;
 }
 
+.bubblegum {
+	background-image: url("../images/bubblegum.png");
+	background-size: 110px 130px;
+}
+
 .mint1 {
 	background-image: url("../images/mint.png");
 	background-size: 100px 100px;

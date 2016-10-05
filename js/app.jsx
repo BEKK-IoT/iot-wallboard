@@ -19,10 +19,6 @@ React.render(
 	document.getElementById('beacons-holder')
 );
 
-React.render(
-	<StatsApp />,
-	document.getElementById('stats')
-);
 
 React.render(
 	<FirebaseApp />,
